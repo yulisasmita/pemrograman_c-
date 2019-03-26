@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int main(int argc, char **argv)
+{
+	int data[8]={1,2,3,4,5,6,7,8},i,banyak_data,cari;
+	banyak_data=8;
+	
+	cout<<"masukkan jumlah data: ";
+	cin>>banyak_data;
+	
+	srand(time(NULL));
+	for(i=0;i<banyak_data;i++)
+	{
+		data[i]=rand()%100;
+	}
+	cout<<"data: ";
+	for(i=0;i<=banyak_data-1;i++)
+	{
+		cout<<data[i]<<" ";
+	}
+	cout<<"\n\nmasukkan data yang di cari : ";
+	cin>>cari;
+	i=0;
+	while(i<banyak_data && data[i]!=cari)
+	{
+		i=i+1;
+	}
+	if(data[i]==cari)
+	{
+		cout<<"data ketemu di indeks ke: "<<i;
+	}
+	else
+	{
+		cout<<"data tidak ketemu ";
+	}
+	
+	return 0;
+}
